@@ -1,0 +1,92 @@
+.main-container {
+    background-image: url("image.png");
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
+.search-container {
+    display: flex;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 50px;
+    border-radius: 15px;
+}
+
+#input {
+    width: 85%;
+    outline: none;
+    border: transparent;
+    border-radius: 15px;
+}
+
+.search {
+    border: transparent;
+    background-color: rgb(8, 149, 243);
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.profile-card {
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.490);
+    backdrop-filter: blur(5px);
+    margin-top: 60px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Valera Round', sans-serif;
+    border-bottom: 1px solid;
+}
+
+#profile-img {
+    height: 60px;
+    width: auto;
+    border-radius: 50%;
+    box-shadow: 0 3px;
+}
+
+.bio {
+    margin-left: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    word-break: normal;
+}
+
+.follow {
+    margin-left: 0px;
+    padding-top: 10px;
+    display: flex;
+    height: 30px;
+}
+
+.follow div {
+    width: 50%;
+    display: flex;
+    font-family: 'Valera Round', sans-serif;
+    border: 2px solid gray;
+}
+
+#username {
+    font-size: 15px;
+    text-decoration: none;
+    color: gray;
+}
+
+.no {
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
+    <title>Github Fetch</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="search-container">
+            <input type="text" name="username" id="input">
+            <button class="search" id="search">Search</button>
+        </div>
+        <div class="profile-card">
+            <div class="main-info">
+                <img src="https://avatars.githubusercontent.com/u/60508616?v=4" alt="" id="prof-img">
+                <span class="name" id="name">Shouhardik Saha</span>
+                <a href="" id="username">@shouhardik</a>
+            </div>
+            <div class="bio" id="bio">
+                Full-Stack developer
+            </div>
+            <div class="follow">
+                <div class="followers"> followers: <span class="no" id="fllwrs"> 20 </span></div>
+                <div class="following">following: <span class="no" id="fllwg"> 3 </span> </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $("#search").click(() => {
+            $.getJSON("https://api.github.com/users/" + $("#input").val(), (data) => {
+                console.log(data);
+                $("#prof-img").attr("src", data.avatar_url);
+                $("#name").html(data.name);
+                $("#username").html("@" + data.login);
+                $("#username").attr("href", data.html_url);
+                $("#bio").html(data.bio);
+                $("#fllwrs").html(data.followers);
+                $("#fllwg").html(data.following);
+            })
+        })
+    </script>
+</body>
+
+</html>
